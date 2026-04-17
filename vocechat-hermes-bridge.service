@@ -1,0 +1,14 @@
+[Unit]
+Description=VoceChat Hermes Bridge
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/vocechat-bridge
+ExecStart=/usr/bin/python3 /opt/vocechat-bridge/bridge.py
+EnvironmentFile=/opt/vocechat-bridge/.env
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

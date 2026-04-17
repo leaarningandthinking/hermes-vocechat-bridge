@@ -1,0 +1,28 @@
+# hermes-vocechat-bridge configuration
+# Copy this file to config.yaml and fill in your values
+# Or use environment variables (they take precedence)
+
+# VoceChat server URL (required)
+vocechat_url: "https://your-vocechat.example.com"
+
+# VoceChat Bot API Key (required)
+vocechat_api_key: "your-bot-api-key"
+
+# Hermes Agent API Server URL
+hermes_url: "http://localhost:8642/v1/chat/completions"
+
+# Hermes API Server Key (required)
+hermes_key: "your-hermes-api-key"
+
+# Bridge server settings
+listen_host: "0.0.0.0"
+listen_port: 8010
+
+# Max conversation history per user (older messages are trimmed)
+max_history: 20
+
+# Timeout for Hermes API calls (seconds)
+hermes_timeout: 120
+
+# Log level: DEBUG, INFO, WARNING, ERROR
+log_level: "INFO"

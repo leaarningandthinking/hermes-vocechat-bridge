@@ -1,0 +1,14 @@
+services:
+  bridge:
+    build: .
+    container_name: vocechat-hermes-bridge
+    restart: always
+    ports:
+      - "8010:8010"
+    environment:
+      - VOCECHAT_URL=https://your-vocechat.example.com
+      - VOCECHAT_API_KEY=your-bot-api-key
+      - HERMES_URL=http://host.docker.internal:8642/v1/chat/completions
+      - HERMES_KEY=your-hermes-api-key
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
